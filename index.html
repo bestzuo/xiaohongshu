@@ -3,274 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>测测你的内在动物人格 🐾</title>
+<title>鹤与月 · 趣味测试合集</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  color: #333;
-}
-
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 封面页 */
-#cover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 30px 20px;
-  text-align: center;
-  background: linear-gradient(180deg, #fef9f3 0%, #f0e6ff 100%);
-}
-#cover h1 { font-size: 28px; margin-bottom: 10px; }
-#cover .subtitle { font-size: 16px; color: #888; margin-bottom: 30px; }
-#cover .emoji-big { font-size: 80px; margin-bottom: 20px; animation: bounce 2s infinite; }
-@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-#start-btn {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
-  border: none;
-  padding: 16px 48px;
-  font-size: 18px;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(102,126,234,.4);
-}
-#start-btn:active { transform: scale(0.97); }
-
-/* 答题页 */
-#quiz { display: none; padding: 20px; min-height: 100vh; }
-.progress-bar {
-  width: 100%; height: 6px; background: #eee; border-radius: 3px; margin-bottom: 20px;
-}
-.progress-fill {
-  height: 100%; background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 3px; transition: width .3s;
-}
-#question-text { font-size: 20px; font-weight: bold; margin: 20px 0; line-height: 1.5; }
-.options { display: flex; flex-direction: column; gap: 12px; }
-.option-btn {
-  background: #f8f8f8; border: 2px solid #eee; padding: 16px;
-  border-radius: 14px; font-size: 16px; cursor: pointer; text-align: left;
-  transition: all .2s;
-}
-.option-btn:active, .option-btn.selected { border-color: #667eea; background: #f0edff; }
-
-/* 加载页 */
-#loading { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
-.loader { width: 50px; height: 50px; border: 5px solid #eee; border-top-color: #667eea; border-radius: 50%; animation: spin 1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-#loading p { margin-top: 20px; color: #666; }
-
-/* 结果页 */
-#result { display: none; padding: 30px 20px; text-align: center; min-height: 100vh; }
-.result-emoji { font-size: 100px; margin-bottom: 10px; }
-.result-name { font-size: 26px; font-weight: bold; margin-bottom: 8px; }
-.result-tagline { font-size: 16px; color: #764ba2; margin-bottom: 24px; font-style: italic; }
-.result-desc { font-size: 15px; line-height: 1.8; color: #555; text-align: left; background: #f9f7ff; padding: 20px; border-radius: 16px; margin-bottom: 20px; }
-.result-traits { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
-.trait { background: #eee; padding: 6px 14px; border-radius: 20px; font-size: 13px; }
-#retest-btn {
-  background: #f0e6ff; color: #764ba2; border: none; padding: 14px 36px;
-  font-size: 16px; border-radius: 25px; cursor: pointer;
-}
-.share-hint { margin-top: 16px; font-size: 13px; color: #aaa; }
+  *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+  body{background:#fff5f7;color:#333;padding:16px;max-width:480px;margin:0 auto}
+  .header{text-align:center;margin-bottom:20px;padding-top:12px}
+  .logo{font-size:26px;font-weight:800;background:linear-gradient(135deg,#ff6b9d,#ffc107);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
+  .sub{font-size:13px;color:#999;margin-top:6px}
+  .price-note{display:inline-block;background:#ff6b9d;color:#fff;padding:3px 12px;border-radius:12px;font-size:13px;font-weight:bold;margin-top:10px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .theme-card{background:#fff;border:2px solid #ffe0ec;border-radius:18px;padding:18px 12px;text-align:center;cursor:pointer;transition:.2s;text-decoration:none;color:#333;box-shadow:0 4px 12px rgba(255,107,157,.08)}
+  .theme-card:active{transform:scale(.96)}
+  .theme-emoji{font-size:36px;display:block;margin-bottom:8px}
+  .theme-name{font-weight:700;font-size:16px}
+  .theme-price{display:inline-block;background:#ffc107;color:#333;padding:2px 8px;border-radius:8px;font-size:12px;font-weight:bold;margin-top:6px}
+  .footer{text-align:center;margin-top:24px;padding:16px;background:#fff;border-radius:16px}
+  .footer-logo{font-size:18px;font-weight:800;color:#ff6b9d;letter-spacing:2px}
+  .disclaimer{font-size:11px;color:#aaa;margin-top:12px;text-align:center}
 </style>
 </head>
 <body>
-<div class="container">
-
-  <!-- 封面 -->
-  <div id="cover">
-	<div class="emoji-big">🐾</div>
-	<h1>测测你的内在动物人格</h1>
-	<p class="subtitle">12道题，揭开你灵魂深处的动物原型</p>
-	<button id="start-btn" onclick="startQuiz()">开始测试</button>
-  </div>
-
-  <!-- 答题 -->
-  <div id="quiz">
-	<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-	<div id="question-text"></div>
-	<div class="options" id="options"></div>
-  </div>
-
-  <!-- 加载 -->
-  <div id="loading">
-	<div class="loader"></div>
-	<p>正在分析你的灵魂...</p>
-  </div>
-
-  <!-- 结果 -->
-  <div id="result">
-	<div class="result-emoji" id="result-emoji"></div>
-	<div class="result-name" id="result-name"></div>
-	<div class="result-tagline" id="result-tagline"></div>
-	<div class="result-desc" id="result-desc"></div>
-	<div class="result-traits" id="result-traits"></div>
-	<button id="retest-btn" onclick="retest()">再测一次</button>
-	<p class="share-hint">📸 截图分享给朋友，看看TA是什么动物！</p>
-  </div>
-
+<div class="header">
+  <div class="logo">鹤与月</div>
+  <div class="sub">趣味人格测试 · 发现另一个你</div>
+  <div class="price-note">每个测试 ¥0.99</div>
 </div>
 
-<script>
-const questions = [
-  { q: "周末你最理想的打开方式是？", options: [
-	{ text: "约上三五好友去探店打卡", animals: { fox: 2, dolphin: 1 } },
-	{ text: "窝在家里看剧/看书/打游戏", animals: { panda: 2, owl: 1 } },
-	{ text: "去户外徒步、爬山、运动", animals: { lion: 2, wolf: 1 } },
-	{ text: "找个安静的咖啡馆发呆", animals: { butterfly: 2, turtle: 1 } }
-  ]},
-  { q: "朋友聚会时你通常扮演什么角色？", options: [
-	{ text: "气氛担当，段子手本手", animals: { dolphin: 2, fox: 1 } },
-	{ text: "倾听者，偶尔接一两句金句", animals: { panda: 2, turtle: 1 } },
-	{ text: "组织者，大家听我安排", animals: { lion: 2, wolf: 1 } },
-	{ text: "角落观察员，默默观察所有人", animals: { owl: 2, butterfly: 1 } }
-  ]},
-  { q: "面对突发状况你的第一反应是？", options: [
-	{ text: "快速想出Plan B，灵活应对", animals: { fox: 2, dolphin: 1 } },
-	{ text: "先冷静分析，再决定怎么做", animals: { owl: 2, turtle: 1 } },
-	{ text: "直接冲上去解决问题", animals: { lion: 2, wolf: 1 } },
-	{ text: "找人商量，不独自硬扛", animals: { panda: 2, butterfly: 1 } }
-  ]},
-  { q: "你最看重一段关系的什么？", options: [
-	{ text: "有趣！能一起玩一起笑", animals: { dolphin: 2, fox: 1 } },
-	{ text: "安全感，稳定长久", animals: { turtle: 2, panda: 1 } },
-	{ text: "互相成就，一起变强", animals: { lion: 2, wolf: 1 } },
-	{ text: "灵魂共鸣，深度交流", animals: { owl: 2, butterfly: 1 } }
-  ]},
-  { q: "别人通常怎么形容你？", options: [
-	{ text: "聪明机灵，鬼点子多", animals: { fox: 2, owl: 1 } },
-	{ text: "温柔靠谱，像个小太阳", animals: { panda: 2, dolphin: 1 } },
-	{ text: "气场强，有主见", animals: { lion: 2, wolf: 1 } },
-	{ text: "文艺独特，想法不一样", animals: { butterfly: 2, turtle: 1 } }
-  ]},
-  { q: "你释放压力的方式是？", options: [
-	{ text: "找人吐槽/逛街/吃大餐", animals: { fox: 2, dolphin: 1 } },
-	{ text: "独处充电，睡一觉就好", animals: { panda: 2, owl: 1 } },
-	{ text: "运动到大汗淋漓", animals: { lion: 2, wolf: 1 } },
-	{ text: "创作点什么/写写画画", animals: { butterfly: 2, turtle: 1 } }
-  ]},
-  { q: "工作中你最讨厌什么？", options: [
-	{ text: "无聊重复，没有变化", animals: { fox: 2, dolphin: 1 } },
-	{ text: "被人催，节奏被打乱", animals: { turtle: 2, panda: 1 } },
-	{ text: "低效扯皮，不干正事", animals: { lion: 2, owl: 1 } },
-	{ text: "缺乏美感，粗制滥造", animals: { butterfly: 2, wolf: 1 } }
-  ]},
-  { q: "如果变成动物，你最想过哪种生活？", options: [
-	{ text: "在森林里自由穿梭，交很多朋友", animals: { fox: 2, dolphin: 1 } },
-	{ text: "在竹林里慢悠悠吃竹子晒太阳", animals: { panda: 2, turtle: 1 } },
-	{ text: "统领一群伙伴，守护领地", animals: { lion: 2, wolf: 1 } },
-	{ text: "在花丛中飞舞，看遍世间美好", animals: { butterfly: 2, owl: 1 } }
-  ]},
-  { q: "你做决定的方式更接近？", options: [
-	{ text: "凭直觉，快准狠", animals: { fox: 2, lion: 1 } },
-	{ text: "列利弊清单，理性分析", animals: { owl: 2, turtle: 1 } },
-	{ text: "问身边人的意见", animals: { panda: 2, dolphin: 1 } },
-	{ text: "跟着心走，感觉对就行", animals: { butterfly: 2, fox: 1 } }
-  ]},
-  { q: "朋友眼里的你，最像？", options: [
-	{ text: "点子王，永远有新鲜事", animals: { fox: 2, butterfly: 1 } },
-	{ text: "老好人，脾气好没架子", animals: { panda: 2, dolphin: 1 } },
-	{ text: "主心骨，有事儿找你准", animals: { lion: 2, wolf: 1 } },
-	{ text: "神秘人，深藏功与名", animals: { owl: 2, turtle: 1 } }
-  ]},
-  { q: "周末理想打开方式？", options: [
-	{ text: "探店打卡，社交局走起", animals: { fox: 2, dolphin: 1 } },
-	{ text: "宅家躺平，补觉刷剧", animals: { panda: 2, turtle: 1 } },
-	{ text: "户外暴走，运动流汗", animals: { lion: 2, wolf: 1 } },
-	{ text: "独处阅读，学点新东西", animals: { owl: 2, butterfly: 1 } }
-  ]}
-];
+<div class="grid">
+  <a class="theme-card" href="animal.html"><span class="theme-emoji">🐾</span><div class="theme-name">动物人格</div><span class="theme-price">¥0.99</span></a>
+  <a class="theme-card" href="love.html"><span class="theme-emoji">💕</span><div class="theme-name">恋爱人格</div><span class="theme-price">¥0.99</span></a>
+  <a class="theme-card" href="dessert.html"><span class="theme-emoji">🍰</span><div class="theme-name">甜品人格</div><span class="theme-price">¥0.99</span></a>
+  <a class="theme-card" href="survival.html"><span class="theme-emoji">🧟</span><div class="theme-name">末世生存</div><span class="theme-price">¥0.99</span></a>
+  <a class="theme-card" href="emotion.html"><span class="theme-emoji">🌊</span><div class="theme-name">情绪力测评</div><span class="theme-price">¥0.99</span></a>
+</div>
 
-const animals = {
-  fox: { emoji: "🦊", name: "机敏狐狸", tagline: "聪明灵活，洞察人心", desc: "你思维敏捷，善于捕捉机会，是社交场上的智者。", traits: ["机敏", "灵活", "洞察力", "适应力"] },
-  panda: { emoji: "🐼", name: "佛系熊猫", tagline: "随性自在，温柔包容", desc: "你自带松弛感，温和友善，不喜欢争抢，总能用平静的心态面对生活的起伏。", traits: ["随性", "温柔", "包容", "佛系"] },
-  lion: { emoji: "🦁", name: "霸气狮子", tagline: "自信果敢，天生领袖", desc: "你气场强大，做事果断，有强烈的责任感和领导力，敢于直面挑战。", traits: ["自信", "果敢", "领导力", "担当"] },
-  owl: { emoji: "🦉", name: "睿智猫头鹰", tagline: "理性深邃，洞察本质", desc: "你洞察力极强，习惯理性审视世界。不盲从，总能在混沌中看清本质。", traits: ["理性", "洞察", "独立", "深邃"] },
-  dolphin: { emoji: "🐬", name: "自由海豚", tagline: "乐观开朗，热爱自由", desc: "你像风一样自由，自带快乐磁场。随性洒脱，总能把轻松传递给周围的人。", traits: ["乐观", "自由", "随性", "亲和"] },
-  turtle: { emoji: "🐢", name: "稳重乌龟", tagline: "踏实可靠，耐心持久", desc: "你不急不躁，每一步都走得扎实。时间证明你的耐心，最终往往赢在持久力。", traits: ["踏实", "耐心", "稳健", "守恒"] },
-  butterfly: { emoji: "🦋", name: "浪漫蝴蝶", tagline: "感性文艺，追求美好", desc: "你对美和浪漫有天然感知，内心世界丰富。生活因你的细腻而多了一份诗意。", traits: ["感性", "文艺", "浪漫", "灵动"] },
-  wolf: { emoji: "🐺", name: "忠诚狼", tagline: "重情重义，团队精神", desc: "你极度重视羁绊与团队，保护欲强。认定的伙伴就会并肩作战，绝不抛弃。", traits: ["忠诚", "团队", "守护", "坚韧"] }
-};
+<div class="footer">
+  <div class="footer-logo">鹤与月</div>
+  <div class="sub" style="margin-top:6px">每个测试独立购买，测完即得结果</div>
+  <div class="sub">小红书店铺 @鹤与月</div>
+</div>
 
-let currentQ = 0;
-let scores = { fox: 0, panda: 0, lion: 0, owl: 0, dolphin: 0, turtle: 0, butterfly: 0, wolf: 0 };
-
-function startQuiz() {
-  document.getElementById('cover').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
-  showQuestion();
-}
-
-function showQuestion() {
-  const q = questions[currentQ];
-  document.getElementById('question-text').textContent = `Q${currentQ + 1}. ${q.q}`;
-  document.getElementById('progress').style.width = `${(currentQ / questions.length) * 100}%`;
-  const optsDiv = document.getElementById('options');
-  optsDiv.innerHTML = '';
-  q.options.forEach((opt) => {
-	const btn = document.createElement('button');
-	btn.className = 'option-btn';
-	btn.textContent = opt.text;
-	btn.onclick = () => selectOption(btn, opt);
-	optsDiv.appendChild(btn);
-  });
-}
-
-function selectOption(btn, opt) {
-  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  setTimeout(() => {
-	Object.entries(opt.animals).forEach(([animal, pts]) => { scores[animal] += pts; });
-	currentQ++;
-	if (currentQ < questions.length) { showQuestion(); }
-	else { showResult(); }
-  }, 400);
-}
-
-function showResult() {
-  document.getElementById('quiz').style.display = 'none';
-  document.getElementById('loading').style.display = 'flex';
-  setTimeout(() => {
-	document.getElementById('loading').style.display = 'none';
-	document.getElementById('result').style.display = 'block';
-	const topAnimal = Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
-	const a = animals[topAnimal];
-	document.getElementById('result-emoji').textContent = a.emoji;
-	document.getElementById('result-name').textContent = a.name;
-	document.getElementById('result-tagline').textContent = a.tagline;
-	document.getElementById('result-desc').textContent = a.desc;
-	const traitsDiv = document.getElementById('result-traits');
-	traitsDiv.innerHTML = '';
-	a.traits.forEach(t => {
-	  const span = document.createElement('span');
-	  span.className = 'trait';
-	  span.textContent = t;
-	  traitsDiv.appendChild(span);
-	});
-	document.getElementById('progress').style.width = '100%';
-  }, 2000);
-}
-
-function retest() {
-  currentQ = 0;
-  scores = { fox: 0, panda: 0, lion: 0, owl: 0, dolphin: 0, turtle: 0, butterfly: 0, wolf: 0 };
-  document.getElementById('result').style.display = 'none';
-  document.getElementById('cover').style.display = 'flex';
-}
-</script>
+<div class="disclaimer">仅供娱乐参考 · 非专业诊断</div>
 </body>
 </html>
